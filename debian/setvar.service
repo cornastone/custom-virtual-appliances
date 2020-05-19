@@ -1,0 +1,22 @@
+#################################################################################
+# setvar.service
+#
+# This service unit is for setting the custom OVF variables on the first startup
+# By ucramer
+# Licensed under GPL V2
+#
+################################################################################
+# This program should be placed in /usr/lib/systemd/system/.
+# Create a symlink to it from the /etc/systemd/system directory.
+################################################################################
+
+[Unit]
+Description=Apply OVF Variables for Networking
+#After=network.target
+  
+[Service]
+ExecStart=/usr/local/bin/setvar.sh
+
+
+[Install]
+WantedBy=multi-user.target
